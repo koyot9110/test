@@ -1,0 +1,47 @@
+<h3>Search for your dreamed flight</h3>
+
+
+<div  ng-controller="View1Ctrl" >
+    <form role="form" ng-submit="getFlight()">
+       
+         From:<select ng-options="apt as apt.label for apt in airport track by apt.id"  ng-model="chosenAirportOrigin" required ><option></option></select>
+        <br><br>
+         
+        *To:  <select ng-options="apt as apt.label for apt in airport track by apt.id"  ng-model="chosenAirportDestination" ></select>
+        <br><br>
+
+        Departure date:
+        <input type="date" name="date" ng-model="date" required><br>
+        Seats: <select  name="tickets" ng-model="tickets" required>          
+            <option value="" ></option>
+            <option value="1" >1</option>
+            <option value="2" >2</option>
+            <option value="3" >3</option>
+        </select>
+        <br>
+        <br>
+
+        <button type="submit" class="btn btn-success">Search</button>
+    </form>
+    <br>
+
+    <uib-accordion>
+         <div ng-repeat="airline in output">
+             <uib-accordion-group heading="{{flight.origin}} -> {{flight.destination}}" ng-repeat="flight in airline.flights " ng-model="destinationChosen">
+           
+
+                
+                <ul>
+                    
+                    <li><b>Airline: </b> {{airline.airline}} </li>
+                    <li><b>Flight number: </b> {{flight.flightID}} </li>
+                    <li><b>Seats available: </b> {{flight.numberOfSeats}} </li>
+                    <li ng-model="seatsWanted"><b>Duration: </b> {{flight.traveltime}} mins</li>
+                    <li ng-model="price"><b>Price: </b> {{flight.totalPrice}} EUR</li>
+                    
+                    <a href="#view2"><button ng-click="getFlight(flight.flightID,airline.airline)" type="submit" class="btn btn-success">Book</button>
+                </ul>
+            </div>
+        </uib-accordion-group>
+    </uib-accordion>
+</div>

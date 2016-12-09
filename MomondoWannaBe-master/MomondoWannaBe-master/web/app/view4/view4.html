@@ -1,0 +1,31 @@
+<h3>Your reservations   </h3>
+
+
+<div  ng-controller="View4Ctrl" >
+
+    <br>
+    <button ng-click="getReservations()" class="btn btn-success">Get your reservations</button>
+    
+    <table ng-repeat="reservations in output" border="1"  >
+        <thead >
+            <tr>
+
+                <th>Flight ID</th> 
+                <th>Airline Name</th> 
+                <th>Email</th>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td>{{reservations.flightID}}</td>
+                <td>{{reservations.airline.name}}</td>
+                <td style="width:100%">{{reservations.reserveEmail}}</td>
+                <td style="width:100%">{{reservations.reservePhone}}</td>
+                <td style="width:100%">{{reservations.reserveeName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

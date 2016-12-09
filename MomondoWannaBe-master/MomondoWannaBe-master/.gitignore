@@ -1,0 +1,5 @@
+/build/
+/dist/
+/nbproject/private/
+/src/java/tester/Tester.java
+/src/conf/persistence.xml

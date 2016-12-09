@@ -1,0 +1,113 @@
+ ol.list {
+    list-style-type: none;
+    margin: 0;
+    margin-left: 3em;
+    padding: 0;  
+    counter-reset: li-counter;
+}
+ol.list > li{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 0.5em;
+    min-height: 1.5em;
+    border-left: 2px solid #CCCCCC;
+}
+input {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+#login-form {
+  width: 300px;
+}
+
+#login-form h3 {
+  background-color: #282830;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 14px;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#login-form fieldset {
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 20px;
+  position: relative;
+}
+
+#login-form fieldset:before {
+  background-color: #fff;
+  content: "";
+  height: 8px;
+  left: 50%;
+  margin: -4px 0 0 -4px;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 8px;
+}
+
+#login-form input {
+  font-size: 14px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+  border: 1px solid #dcdcdc;
+  padding: 12px 10px;
+  width: 100%;
+}
+
+#login-form input[type="text"] {
+  border-radius: 3px 3px 0 0;
+}
+
+#login-form input[type="password"] {
+  border-top: none;
+  border-radius: 0px 0px 3px 3px;
+}
+
+#login-form input[type="submit"] {
+  background: #1dabb8;
+  border-radius: 3px;
+  color: #fff;
+  float: right;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 12px 20px;
+}
+
+#login-form input[type="submit"]:hover {
+  background: #198d98;
+}
+
+ol.list > li:before {
+    position: absolute;
+    top: 0;
+    left: -1em;
+    width: 0.8em;
+     
+    font-size: 1.5em;
+    line-height: 1;
+    font-weight: bold;
+    text-align: right;
+    color: #464646;
+ 
+    content: counter(li-counter);
+    counter-increment: li-counter;
+}
